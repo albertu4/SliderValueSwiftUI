@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Подвиньте слайдер как можно ближе к : \(sliderValue)")
+            Text("Подвиньте слайдер, как можно ближе к : \(sliderValue)")
             
             HStack{
                 Text("0")
@@ -28,6 +28,7 @@ struct ContentView: View {
                     
                 }
         }
+        .padding()
     }
 }
 
