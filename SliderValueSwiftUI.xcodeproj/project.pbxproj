@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		741F130A2847B23600C6C9D9 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741F13082847B23600C6C9D9 /* SliderViewController.swift */; };
-		741F130B2847B23600C6C9D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 741F13092847B23600C6C9D9 /* Main.storyboard */; };
+		741F130E2847B45400C6C9D9 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741F130D2847B45400C6C9D9 /* SliderView.swift */; };
 		748A491E28478D2100BE3E41 /* SliderValueSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748A491D28478D2100BE3E41 /* SliderValueSwiftUIApp.swift */; };
 		748A492028478D2100BE3E41 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748A491F28478D2100BE3E41 /* ContentView.swift */; };
 		748A492228478D2200BE3E41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 748A492128478D2200BE3E41 /* Assets.xcassets */; };
@@ -17,8 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		741F13082847B23600C6C9D9 /* SliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
-		741F13092847B23600C6C9D9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		741F130D2847B45400C6C9D9 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		748A491A28478D2100BE3E41 /* SliderValueSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SliderValueSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		748A491D28478D2100BE3E41 /* SliderValueSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderValueSwiftUIApp.swift; sourceTree = "<group>"; };
 		748A491F28478D2100BE3E41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,15 +36,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		741F130C2847B24A00C6C9D9 /* SliderVC */ = {
-			isa = PBXGroup;
-			children = (
-				741F13082847B23600C6C9D9 /* SliderViewController.swift */,
-				741F13092847B23600C6C9D9 /* Main.storyboard */,
-			);
-			path = SliderVC;
-			sourceTree = "<group>";
-		};
 		748A491128478D2100BE3E41 = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +55,7 @@
 		748A491C28478D2100BE3E41 /* SliderValueSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				741F130C2847B24A00C6C9D9 /* SliderVC */,
+				741F130D2847B45400C6C9D9 /* SliderView.swift */,
 				748A491D28478D2100BE3E41 /* SliderValueSwiftUIApp.swift */,
 				748A491F28478D2100BE3E41 /* ContentView.swift */,
 				748A492B28478E6600BE3E41 /* ButtonView.swift */,
@@ -142,7 +131,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				741F130B2847B23600C6C9D9 /* Main.storyboard in Resources */,
 				748A492528478D2200BE3E41 /* Preview Assets.xcassets in Resources */,
 				748A492228478D2200BE3E41 /* Assets.xcassets in Resources */,
 			);
@@ -156,9 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				748A492028478D2100BE3E41 /* ContentView.swift in Sources */,
+				741F130E2847B45400C6C9D9 /* SliderView.swift in Sources */,
 				748A491E28478D2100BE3E41 /* SliderValueSwiftUIApp.swift in Sources */,
 				748A492C28478E6600BE3E41 /* ButtonView.swift in Sources */,
-				741F130A2847B23600C6C9D9 /* SliderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

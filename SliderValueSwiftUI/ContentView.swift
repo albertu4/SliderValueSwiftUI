@@ -8,25 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    let sliderValue = 30
+    @State private var currentValue: Float = 50
+    
+    @State private var targetValue = Int.random(in: 0...100)
+    @State private var result = 0
+    @State private var showAlert = false
     
     var body: some View {
         VStack {
-            Text("Подвиньте слайдер, как можно ближе к : \(sliderValue)")
+            Text("Подвиньте слайдер, как можно ближе к : \(targetValue)")
             
             HStack{
                 Text("0")
-                Spacer()
+                SliderView(targetValue: targetValue, currentValue: currentValue, result: $result)
                 Text("100")
             }
             
             ButtonView(text: "Проверь меня") {
-                    
-                }
+                showAlert.toggle()
+            }
+            .alert("Your score",
+                   isPresented: $showAlert,
+                   actions: {}) {
+                Text("\(result)")
+            }
             
             ButtonView(text: "Начать заново") {
-                    
-                }
+                targetValue = Int.random(in: 0...100)
+                currentValue = 50
+            }
         }
         .padding()
     }
