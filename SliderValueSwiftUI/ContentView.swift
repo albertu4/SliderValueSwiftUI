@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    let sliderValue = 30
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Подвиньте слайдер как можно ближе к : \(sliderValue)")
+            
+            HStack{
+                Text("0")
+                Spacer()
+                Text("100")
+            }
+            
+            ButtonView(text: "Проверь меня") {
+                    
+                }
+            
+            ButtonView(text: "Начать заново") {
+                    
+                }
+        }
     }
 }
 
