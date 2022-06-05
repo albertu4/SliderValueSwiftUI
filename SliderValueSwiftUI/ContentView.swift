@@ -36,7 +36,7 @@ struct ContentView: View {
                    isPresented: $showAlert,
                    actions: {}) {
                 Text("\(computeScore())")
-            }
+            }.padding()
             
             ButtonView(text: "Начать заново") {
                 targetValue = Int.random(in: 0...100)
@@ -46,7 +46,7 @@ struct ContentView: View {
     }
     
     private func computeScore() -> Int {
-        let difference = abs(targetValue - lround(Double(currentValue)))
+        let difference = abs(targetValue - currentValue)
         return 100 - difference
     }
 }
