@@ -22,7 +22,6 @@ struct ContentView: View {
                 
                 SliderView(
                     currentValue: $currentValue,
-                    targetValue: targetValue,
                     alphaValue: computeScore()
                 )
                 
