@@ -55,8 +55,8 @@
 		748A491C28478D2100BE3E41 /* SliderValueSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				741F130D2847B45400C6C9D9 /* SliderView.swift */,
 				748A491D28478D2100BE3E41 /* SliderValueSwiftUIApp.swift */,
+				741F130D2847B45400C6C9D9 /* SliderView.swift */,
 				748A491F28478D2100BE3E41 /* ContentView.swift */,
 				748A492B28478E6600BE3E41 /* ButtonView.swift */,
 				748A492128478D2200BE3E41 /* Assets.xcassets */,

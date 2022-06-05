@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var currentValue: Float = 50
-    
+    @State private var currentValue = 50
     @State private var targetValue = Int.random(in: 0...100)
-    @State private var result = 0
+    
     @State private var showAlert = false
     
     var body: some View {
@@ -20,7 +19,13 @@ struct ContentView: View {
             
             HStack{
                 Text("0")
-                SliderView(targetValue: targetValue, currentValue: currentValue, result: $result)
+                
+                SliderView(
+                    currentValue: $currentValue,
+                    targetValue: targetValue,
+                    alphaValue: computeScore()
+                )
+                
                 Text("100")
             }
             
@@ -30,15 +35,19 @@ struct ContentView: View {
             .alert("Your score",
                    isPresented: $showAlert,
                    actions: {}) {
-                Text("\(result)")
+                Text("\(computeScore())")
             }
             
             ButtonView(text: "Начать заново") {
                 targetValue = Int.random(in: 0...100)
-                currentValue = 50
             }
         }
         .padding()
+    }
+    
+    private func computeScore() -> Int {
+        let difference = abs(targetValue - lround(Double(currentValue)))
+        return 100 - difference
     }
 }
 

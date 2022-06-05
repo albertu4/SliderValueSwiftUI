@@ -9,11 +9,12 @@ import SwiftUI
 
 struct SliderView: UIViewRepresentable {
     
+    @Binding var currentValue: Int
     let targetValue: Int
-    let currentValue: Float
-    @Binding var result: Int
+    let alphaValue: Int
     
     func makeUIView(context: Context) -> UISlider {
+        
         let slider = UISlider()
         setSliderConfigure(slider)
         
@@ -26,45 +27,37 @@ struct SliderView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UISlider, context: Context) {
+        uiView.thumbTintColor = UIColor(red: 1, green: 0, blue: 0, alpha: CGFloat(alphaValue)/100)
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(result: $result)
+        Coordinator(currentValue: $currentValue)
     }
     
     private func setSliderConfigure(_ slider: UISlider) {
         slider.minimumValue = 0
         slider.maximumValue = 100
-        slider.value = currentValue
-        slider.thumbTintColor = .red
-    }
-    
-    
-    
-    func computeScore(slider: UISlider) -> Int {
-        let difference = abs(targetValue - lround(Double(slider.value)))
-        return (100 - difference)
+        slider.value = Float(currentValue)
+        slider.thumbTintColor = UIColor(red: 1, green: 0, blue: 0, alpha: CGFloat(alphaValue)/100)
     }
 }
 
 extension SliderView {
     class Coordinator: NSObject {
-        @Binding var result: Int
+        @Binding var currentValue: Int
         
-        init(result: Binding<Int>) {
-            self._result = result
+        init(currentValue: Binding<Int>) {
+            self._currentValue = currentValue
         }
         
         @objc func changeSliderValue(_ sender: UISlider) {
-//            result = SliderView.computeScore(slider: sender)
-            
-            sender.thumbTintColor = UIColor(red: 1, green: 0, blue: 0, alpha: CGFloat(result/100))
+            currentValue = Int(sender.value)
         }
     }
 }
 
 struct SliderView_Previews: PreviewProvider {
     static var previews: some View {
-        SliderView(targetValue: 40, currentValue: 30, result: .constant(40))
+        SliderView(currentValue: .constant(50), targetValue: 100, alphaValue: 50)
     }
 }
